@@ -15,6 +15,6 @@ export function applyMiddleware(app: Express) {
     })
   );
 
-  // Custom error handler middleware (should be last)
+  // Custom error handler middleware
   app.use(errorHandler);
 }
