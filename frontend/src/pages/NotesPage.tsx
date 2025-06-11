@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { getContacts, editContactNote } from "../api/v1/contacts";
 import TextArea from "../components/TextArea";
 import Button from "../components/Button";
+import Heading1 from "../components/Heading1";
+import Paragraph from "../components/Paragraph";
 
 type Contact = {
   id: number;
@@ -72,13 +74,13 @@ const NotesPage = () => {
   };
 
   return (
-    <div className="page-padding">
-      <h1>Canvassing notes</h1>
-      <div className="flex bg-white rounded-md border-slate-900 border-2 pl-8 py-4">
-        <p>
+    <div className="px-4 md:px-6 py-4 md:py-6">
+      <Heading1 title="Canvassing notes" />
+      <div className="flex bg-white rounded-md border-slate-900 border-2 px-8 py-4">
+        <Paragraph>
           View, edit, and manage your notes. Click on "Edit note" button to edit
           the notes inline for that contact.
-        </p>
+        </Paragraph>
       </div>
       <div className="overflow-x-auto mt-4">
         <table
@@ -99,7 +101,7 @@ const NotesPage = () => {
               contacts.map((contact: Contact) => (
                 <tr key={contact.id}>
                   <td>
-                    <p>{contact.name}</p>
+                    <Paragraph>{contact.name}</Paragraph>
                   </td>
                   <td>
                     {contact.id == editContactId ? (
@@ -112,7 +114,7 @@ const NotesPage = () => {
                         }
                       />
                     ) : (
-                      <p>{contact.notes}</p>
+                      <Paragraph>{contact.notes}</Paragraph>
                     )}
                   </td>
                   <td className="flex text-nowrap justify-center">

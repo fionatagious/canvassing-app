@@ -71,7 +71,8 @@ export const getContact = async (
       return res.status(404).json({ error: "Contact not found." });
     }
 
-    const formatted = contact.map(formatContact);
+    // format the contact row to pass the Contact object rather than array
+    const formatted = formatContact(contact[0]);
     res.status(200).json(formatted);
   } catch (error) {
     console.error("Error fetching contact:", error);

@@ -12,6 +12,9 @@ import TextInput from "../components/TextInput";
 import CheckboxInput from "../components/CheckboxInput";
 import TextArea from "../components/TextArea";
 import Button from "../components/Button";
+import Heading1 from "../components/Heading1";
+import Heading2 from "../components/Heading2";
+import Paragraph from "../components/Paragraph";
 // validation
 import {
   createContactSchema,
@@ -53,20 +56,20 @@ const AddContactPage = () => {
   };
 
   return (
-    <div className="page-padding flex flex-col justify-center">
-      <h1 className="text-2xl mb-4">Add Contact</h1>
-      <div className="flex bg-white rounded-md border-slate-900 border-2 pl-8 py-4 mb-8">
-        <p>
+    <div className="px-4 md:px-6 py-4 md:py-6 flex flex-col justify-center">
+      <Heading1 title="Add Contact" className="text-2xl mb-4" />
+      <div className="flex bg-white rounded-md border-slate-900 border-2 px-8 py-4 mb-8">
+        <Paragraph>
           Fill out the form below to add a contact. The only required field is
           name. You can edit the contact later to add more information.
-        </p>
+        </Paragraph>
       </div>
       <form
         data-cy="add-contact-form"
         className="flex flex-col justify-center p-7 border-[1px] border-gray-900 rounded-md bg-white"
         onSubmit={handleSubmit(onSubmit, onError)}
       >
-        <h2>Add Contact</h2>
+        <Heading2 title="Add Contact" />
         <TextInput
           name="name"
           label="Name"
@@ -106,7 +109,7 @@ const AddContactPage = () => {
           type="checkbox"
           register={register}
         />
-        <hr />
+        <hr className="border-t-2 border-gray-300 my-4" />
         <Button className="my-4" label="Add contact" type="submit" />
       </form>
     </div>

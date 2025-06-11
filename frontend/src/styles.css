@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,38 +11,28 @@
   --color-table-header: rgb(135 94 255 / 0.1);
 }
 
-hr {
-  @apply border-t-2 border-gray-300 my-4;
-}
-
-p {
-  @apply text-lg md:text-xl my-4;
-}
-
-h1 {
-  @apply text-4xl text-center md:text-3xl my-4;
-}
-
-h2 {
-  @apply text-3xl text-center sm:text-left md:text-2xl my-4;
-}
-
-body {
-  @apply bg-secondary/15 text-slate-900;
-}
-
 nav {
-  @apply bg-primary;
+  display: flex;
+  gap: calc(var(--spacing) * 10);
+  justify-content: left;
+  align-items: center;
+  padding-block: calc(var(--spacing) * 6);
+  padding-inline: calc(var(--spacing) * 9);
+  background-color: var(--color-primary);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-
 nav a {
-  @apply text-white text-nowrap font-semibold hover:underline;
+  color: #fff;
+  text-wrap: nowrap;
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.25rem;
 }
-
-.page-padding {
-  @apply px-4 md:px-6 lg:px-8 xl:px-96 py-4 md:py-6 lg:py-8 xl:py-12;
+nav a:hover {
+  text-decoration: underline;
 }
-
 table {
   border: 2px solid var(--color-slate-900);
   letter-spacing: 1px;

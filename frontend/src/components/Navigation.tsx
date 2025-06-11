@@ -1,9 +1,13 @@
 import { NavLink } from "react-router";
 import { links } from "../data/consts";
 
-const Navigation = () => {
+interface NavigationProps {
+  className?: string;
+}
+
+const Navigation = (className: NavigationProps) => {
   return (
-    <nav className="flex gap-10 justify-left py-6 px-6 bg-white sticky top-0">
+    <nav className={`${className}`}>
       <NavLink to={links.home.href}>{links.home.name}</NavLink>
       <NavLink to={links.contacts.href}>{links.contacts.name}</NavLink>
       <NavLink to={links.newContact.href}>{links.newContact.name}</NavLink>

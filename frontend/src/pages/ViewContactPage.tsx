@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getContact, deleteContact } from "../api/v1/contacts";
 import Button from "../components/Button";
+import Heading1 from "../components/Heading1";
+import Paragraph from "../components/Paragraph";
 import { links } from "../data/consts";
 
 type Contact = {
@@ -15,12 +17,11 @@ type Contact = {
 };
 
 const ViewContactPage = () => {
-  const [contact, setContact] = useState([]);
+  const [contact, setContact] = useState<Contact | null>(null);
 
   useEffect(() => {
     const id = Number(window.location.pathname.split("/").pop());
     getContact(id).then(setContact);
-    console.log(JSON.stringify(contact));
   }, []);
 
   const navigate = useNavigate();
@@ -37,23 +38,24 @@ const ViewContactPage = () => {
   };
 
   return (
-    <div className="page-padding">
-      {contact &&
-        contact.map((contact: Contact) => (
-          <div key={contact.id}>
-            <h2>{contact.name}</h2>
-            <p>Address: {contact.address}</p>
-            <p>Email: {contact.email}</p>
-            <p>Notes: {contact.notes}</p>
-            <p>Contacted? {contact.contacted ? "Yes" : "No"}</p>
-            <p>Follow up needed? {contact.follow_up_needed ? "Yes" : "No"}</p>
-            <Button
-              className="my-4"
-              label="Delete contact"
-              onClick={() => handleDelete(contact.id)}
-            />
-          </div>
-        ))}
+    <div className="px-4 md:px-6 py-4 md:py-6">
+      {contact && (
+        <div className="flex flex-col gap-1">
+          <Heading1 title={contact.name} />
+          <Paragraph>{`Address: ${contact.address}`}</Paragraph>
+          <Paragraph>{`Email: ${contact.email}`}</Paragraph>
+          <Paragraph>{`Notes: ${contact.notes}`}</Paragraph>
+          <Paragraph>Contacted? {contact.contacted ? "Yes" : "No"}</Paragraph>
+          <Paragraph>
+            Follow up needed? {contact.follow_up_needed ? "Yes" : "No"}
+          </Paragraph>
+          <Button
+            className="my-4"
+            label="Delete contact"
+            onClick={() => handleDelete(contact.id)}
+          />
+        </div>
+      )}
     </div>
   );
 };
