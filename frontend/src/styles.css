@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6236ff;
+  --color-secondary: #b7f6ff;
+  --color-btn-primary: #6236ff;
+  --color-btn-hover: #875eff;
+  --color-table-header: rgb(135 94 255 / 0.1);
+}
+
+hr {
+  @apply border-t-2 border-gray-300 my-4;
+}
+
+p {
+  @apply text-lg md:text-xl my-4;
+}
+
+h1 {
+  @apply text-4xl text-center md:text-3xl my-4;
+}
+
+h2 {
+  @apply text-3xl text-center sm:text-left md:text-2xl my-4;
+}
+
+body {
+  @apply bg-secondary/15 text-slate-900;
+}
+
+nav {
+  @apply bg-primary;
+}
+
+nav a {
+  @apply text-white text-nowrap font-semibold hover:underline;
+}
+
+.page-padding {
+  @apply px-4 md:px-6 lg:px-8 xl:px-96 py-4 md:py-6 lg:py-8 xl:py-12;
+}
+
+table {
+  border: 2px solid var(--color-slate-900);
+  letter-spacing: 1px;
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #fff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+thead {
+  background-color: var(--color-table-header);
+}
+
+th {
+  border: 1px solid rgb(160 160 160);
+  padding: 1rem;
+  font-weight: bold;
+}
+
+tr {
+  vertical-align: middle;
+}
+
+td {
+  border: 1px solid rgb(160 160 160);
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+#contacts-table td:nth-child(-n + 3) {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#contacts-table td:nth-child(n + 4):nth-child(-n + 6) {
+  text-align: center;
+}
+
+#notes-table td:nth-child(-n + 2) {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#notes-table td:nth-child(n + 3):nth-child(-n + 5) {
+  text-align: center;
+}
