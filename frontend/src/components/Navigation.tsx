@@ -1,9 +1,9 @@
 import { NavLink } from "react-router";
 import { links } from "../data/consts";
 
-const Navigation = (className: string) => {
+const Navigation = () => {
   return (
-    <nav className={`${className}`}>
+    <nav>
       <NavLink to={links.home.href}>{links.home.name}</NavLink>
       <NavLink to={links.contacts.href}>{links.contacts.name}</NavLink>
       <NavLink to={links.newContact.href}>{links.newContact.name}</NavLink>
