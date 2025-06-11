@@ -10,10 +10,16 @@ applyMiddleware(app);
 
 app.use("/api/v1", apiV1Router);
 
+// 404 fallback
+app.use((req, res) => {
+  res.status(404).json({ error: "Route not found." });
+});
+
 // listen for incoming requests
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
+// export app for vitest tests
 export default app;
