@@ -1,21 +1,12 @@
-// This file is the entry point for the backend server
+// Entry point for the backend server
 import express from "express";
-import cors from "cors";
 import apiV1Router from "./api/v1/routes";
-import helmet from "helmet";
+import { applyMiddleware } from "./middleware";
 
 const app = express();
 
 // apply global middleware
-app.use(cors());
-app.use(express.json());
-
-// override CSP
-app.use(
-  helmet({
-    contentSecurityPolicy: false,
-  })
-);
+applyMiddleware(app);
 
 app.use("/api/v1", apiV1Router);
 
