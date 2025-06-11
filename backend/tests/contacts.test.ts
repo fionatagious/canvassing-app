@@ -115,6 +115,7 @@ describe("Contacts API", () => {
     expect(deleteResponse.status).toBe(404);
   });
 
+  // close db connection after all tests
   afterAll(async () => {
     await conn.end();
   });
