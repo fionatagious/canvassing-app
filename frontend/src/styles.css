@@ -5,12 +5,18 @@
 @tailwind utilities;
 @theme {
   --color-primary: #6236ff;
-  --color-secondary: #b7f6ff;
+  --color-secondary: #ccf4fa;
   --color-btn-primary: #6236ff;
   --color-btn-hover: #875eff;
   --color-table-header: rgb(135 94 255 / 0.1);
 }
 
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-secondary);
+  margin: 0;
+  padding: 0;
+}
 nav {
   display: flex;
   gap: calc(var(--spacing) * 10);
