@@ -16,6 +16,6 @@ I developed this app using Node version `v23.11.0`.
 
 ## Scripts
 
-`npm run seed` to populate database with dummy data
-`npm run dev` to start server, will fallback to 3000 if no port is provided in .env
-`npx vitest run` to run tests in contacts.test.ts
+- `npm run seed` to populate database with dummy data
+- `npm run dev` to start server, will fallback to 3000 if no port is provided in .env
+- `npx vitest run` to run tests in contacts.test.ts
