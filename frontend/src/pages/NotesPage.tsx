@@ -101,7 +101,7 @@ const NotesPage = () => {
               contacts.map((contact: Contact) => (
                 <tr key={contact.id}>
                   <td>
-                    <Paragraph>{contact.name}</Paragraph>
+                    <span>{contact.name}</span>
                   </td>
                   <td>
                     {contact.id == editContactId ? (
@@ -114,7 +114,7 @@ const NotesPage = () => {
                         }
                       />
                     ) : (
-                      <Paragraph>{contact.notes}</Paragraph>
+                      <span>{contact.notes}</span>
                     )}
                   </td>
                   <td className="flex text-nowrap justify-center">

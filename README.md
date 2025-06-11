@@ -1,6 +1,6 @@
 # Canvassing app
 
-This repo contains source files for a full-stack application that helps community organizers manage their contacts and notes about each of their contacts. It enables community organizers to store contact information, create new contacts, view existing contacts, and delete contacts. It also supports inline editing of notes, and it is responsive on smaller screen sizes and mobile.
+This repo contains source files for a full-stack application that helps community organizers manage their contacts and notes about each of their contacts. It enables community organizers to store contact information of people who they have reached out to. Users can create new contacts, view existing contacts, filter for a subset of their contacts, and delete contacts. It also supports inline editing of notes, and it is responsive on smaller screen widths.
 
 ## Tech Stack
 
@@ -8,7 +8,7 @@ This repo contains source files for a full-stack application that helps communit
 - [Node](https://nodejs.org/en) version `v23.11.0` and [Express](https://expressjs.com/) for creating the Contacts API
 - [Vitest](https://vitest.dev/) for testing the Contacts API
 - [React](https://react.dev/) for building the user interface and managing state
-- [Tailwind](https://tailwindcss.com/) for styling components
+- [Tailwind](https://tailwindcss.com/) for styling components, and I used colors from Empower's public-facing [website](https://empowerproject.us/).
 - [Yup](https://github.com/jquense/yup) for client-side form validations
 - [Cypress](https://docs.cypress.io) for frontend end-to-end testing
 
