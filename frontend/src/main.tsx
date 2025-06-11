@@ -11,7 +11,7 @@ import NotesPage from "./pages/NotesPage";
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
   <BrowserRouter>
-    <Navigation className="bg-white sticky top-0" />
+    <Navigation />
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/contacts/new" element={<AddContactPage />} />

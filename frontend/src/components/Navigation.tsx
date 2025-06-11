@@ -1,11 +1,7 @@
 import { NavLink } from "react-router";
 import { links } from "../data/consts";
 
-interface NavigationProps {
-  className?: string;
-}
-
-const Navigation = (className: NavigationProps) => {
+const Navigation = (className: string) => {
   return (
     <nav className={`${className}`}>
       <NavLink to={links.home.href}>{links.home.name}</NavLink>
