@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App";
+import "./styles.css";
 import Navigation from "./components/Navigation";
 import AddContactPage from "./pages/AddContactPage";
 import ContactsPage from "./pages/ContactsPage";
