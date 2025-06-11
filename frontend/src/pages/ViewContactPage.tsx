@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getContact, deleteContact } from "../api/v1/contacts";
 import Button from "../components/Button";
 import Heading1 from "../components/Heading1";
@@ -19,10 +19,14 @@ type Contact = {
 const ViewContactPage = () => {
   const [contact, setContact] = useState<Contact | null>(null);
 
+  const { id } = useParams();
   useEffect(() => {
-    const id = Number(window.location.pathname.split("/").pop());
-    getContact(id).then(setContact);
-  }, []);
+    if (id) {
+      getContact(Number(id))
+        .then(setContact)
+        .catch((error) => console.error("Failed to fetch contact", error));
+    }
+  }, [id]);
 
   const navigate = useNavigate();
   const handleDeleteAndRedirect = async (contactId: number) => {
@@ -39,7 +43,9 @@ const ViewContactPage = () => {
 
   return (
     <div className="px-4 md:px-6 py-4 md:py-6">
-      {contact && (
+      {!contact ? (
+        <p>Loading...</p>
+      ) : (
         <div className="flex flex-col gap-1">
           <Heading1 data-cy="contact-name" title={contact.name} />
           <Paragraph data-cy="contact-address">{`Address: ${contact.address}`}</Paragraph>

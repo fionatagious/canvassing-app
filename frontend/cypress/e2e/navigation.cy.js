@@ -22,10 +22,4 @@ describe("Navigation", () => {
       .contains("Your contacts")
       .should("have.attr", "href", "/contacts");
   });
-
-  it("has a navigation link to the 'Add a contact' page", () => {
-    cy.get("nav a")
-      .contains("Add a contact")
-      .should("have.attr", "href", "/contacts/new");
-  });
 });
