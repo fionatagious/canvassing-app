@@ -57,7 +57,7 @@ const AddContactPage = () => {
 
   return (
     <div className="px-4 md:px-6 py-4 md:py-6 flex flex-col justify-center">
-      <Heading1 title="Add Contact" className="text-2xl mb-4" />
+      <Heading1>Add Contact</Heading1>
       <div className="flex bg-white rounded-md border-slate-900 border-2 px-8 py-4 mb-8">
         <Paragraph>
           Fill out the form below to add a contact. The only required field is
@@ -69,7 +69,7 @@ const AddContactPage = () => {
         className="flex flex-col justify-center p-7 border-[1px] border-gray-900 rounded-md bg-white"
         onSubmit={handleSubmit(onSubmit, onError)}
       >
-        <Heading2 title="Add Contact" />
+        <Heading2>Add Contact</Heading2>
         <TextInput
           name="name"
           label="Name"

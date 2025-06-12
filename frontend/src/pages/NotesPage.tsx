@@ -75,7 +75,7 @@ const NotesPage = () => {
 
   return (
     <div className="px-4 md:px-6 py-4 md:py-6">
-      <Heading1 title="Canvassing notes" />
+      <Heading1>Canvassing notes</Heading1>
       <div className="flex bg-white rounded-md border-slate-900 border-2 px-8 py-4">
         <Paragraph>
           View, edit, and manage your notes. Click on "Edit note" button to edit

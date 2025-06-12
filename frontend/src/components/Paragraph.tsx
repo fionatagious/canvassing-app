@@ -1,9 +1,13 @@
-interface ParagraphProps {
-  className?: string;
-  children?: string | string[];
+interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement> {
+  children?: React.ReactNode;
 }
-const Paragraph = ({ children, className }: ParagraphProps) => {
-  return <p className={`${className} text-lg md:text-xl my-4`}>{children}</p>;
+
+const Paragraph = ({ children, className = "", ...rest }: ParagraphProps) => {
+  return (
+    <p className={`text-lg md:text-xl my-4 ${className}`} {...rest}>
+      {children}
+    </p>
+  );
 };
 
 export default Paragraph;

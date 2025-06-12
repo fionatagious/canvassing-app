@@ -10,7 +10,7 @@ const App: React.FC = () => {
   return (
     <div className="px-4 md:px-6 py-4 md:py-6 h-full">
       <div className="flex flex-col border-2 bg-white p-7 rounded-md border-gray-900 justify-center">
-        <Heading1 title="Welcome to Empower's canvassing app!" />
+        <Heading1>Welcome to Empower's canvassing app!</Heading1>
         <Paragraph>
           This app is designed to help you to keep track of your contacts who
           you have engaged with during your canvassing sessions. It also enables
@@ -18,7 +18,7 @@ const App: React.FC = () => {
           about them or the conversation you had with them.
         </Paragraph>
         <hr className="border-t-2 border-gray-300 my-4" />
-        <Heading2 title="Get started" />
+        <Heading2>Get started</Heading2>
         <Paragraph>
           To get started, you can add a new contact by clicking the button
           below.
@@ -29,7 +29,7 @@ const App: React.FC = () => {
           label={links.newContact.name}
           onClick={() => navigate(links.newContact.href)}
         />
-        <Heading2 title="View contacts" />
+        <Heading2>View contacts</Heading2>
         <Paragraph>
           You can view a list of all your canvassing contacts. This is a
           comprehensive list of all the people who you either have engaged with
@@ -41,7 +41,7 @@ const App: React.FC = () => {
           label="View your contacts"
           onClick={() => navigate(links.contacts.href)}
         />
-        <Heading2 title="View notes" />
+        <Heading2>View notes</Heading2>
         <Paragraph>
           This is where you can quickly refer to your canvassing notes.
         </Paragraph>

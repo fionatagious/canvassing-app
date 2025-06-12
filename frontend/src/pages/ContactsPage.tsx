@@ -49,7 +49,7 @@ const ContactsPage = () => {
 
   return (
     <div className="px-4 md:px-6 py-4 md:py-6">
-      <Heading1 title="Your contacts" />
+      <Heading1>Your contacts</Heading1>
       <div className="flex bg-white rounded-md border-slate-900 border-2 px-8 py-4 mb-8">
         <Paragraph>
           View and manage your contacts. Use the filters below to find specific

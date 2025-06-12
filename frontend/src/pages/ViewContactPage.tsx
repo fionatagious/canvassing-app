@@ -46,24 +46,26 @@ const ViewContactPage = () => {
       {!contact ? (
         <p>Loading...</p>
       ) : (
-        <div className="flex flex-col gap-1">
-          <Heading1 data-cy="contact-name" title={contact.name} />
-          <Paragraph data-cy="contact-address">{`Address: ${contact.address}`}</Paragraph>
-          <Paragraph data-cy="contact-email">{`Email: ${contact.email}`}</Paragraph>
-          <Paragraph data-cy="contact-notes">{`Notes: ${contact.notes}`}</Paragraph>
-          <Paragraph data-cy="contact-contacted">
-            Contacted? {contact.contacted ? "Yes" : "No"}
-          </Paragraph>
-          <Paragraph data-cy="contact-follow-up-needed">
-            Follow up needed? {contact.follow_up_needed ? "Yes" : "No"}
-          </Paragraph>
-          <Button
-            data-cy="delete-contact-button"
-            className="my-4"
-            label="Delete contact"
-            onClick={() => handleDeleteAndRedirect(contact.id)}
-          />
-        </div>
+        <>
+          <Heading1 data-cy="contact-name">{contact.name}</Heading1>
+          <div className="flex flex-col gap-1 bg-white rounded-md border-slate-900 border-2 px-8 py-4">
+            <Paragraph data-cy="contact-address">{`Address: ${contact.address}`}</Paragraph>
+            <Paragraph data-cy="contact-email">{`Email: ${contact.email}`}</Paragraph>
+            <Paragraph data-cy="contact-notes">{`Notes: ${contact.notes}`}</Paragraph>
+            <Paragraph data-cy="contact-contacted">
+              Contacted? {contact.contacted ? "Yes" : "No"}
+            </Paragraph>
+            <Paragraph data-cy="contact-follow-up-needed">
+              Follow up needed? {contact.follow_up_needed ? "Yes" : "No"}
+            </Paragraph>
+            <Button
+              data-cy="delete-contact-button"
+              className="my-4"
+              label="Delete contact"
+              onClick={() => handleDeleteAndRedirect(contact.id)}
+            />
+          </div>
+        </>
       )}
     </div>
   );
