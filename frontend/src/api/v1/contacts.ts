@@ -1,6 +1,6 @@
 export async function getContacts(): Promise<any> {
   // Fetch contacts from the backend API
-  const response = await fetch("http://localhost:3000/api/v1/contacts", {
+  const response = await fetch("/api/v1/contacts", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -15,7 +15,7 @@ export async function getContacts(): Promise<any> {
 
 export async function getContact(id: number): Promise<any> {
   // Fetch a single contact by ID
-  const response = await fetch(`http://localhost:3000/api/v1/contacts/${id}`, {
+  const response = await fetch(`/api/v1/contacts/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export async function createContact(
   needToFollowUp: boolean
 ): Promise<any> {
   // Create a new contact
-  const response = await fetch("http://localhost:3000/api/v1/contacts", {
+  const response = await fetch("/api/v1/contacts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -60,7 +60,7 @@ export async function createContact(
 
 export async function editContactNote(id: number, notes: string): Promise<any> {
   // Update an existing contact
-  const response = await fetch(`http://localhost:3000/api/v1/contacts/${id}`, {
+  const response = await fetch(`/api/v1/contacts/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -78,7 +78,7 @@ export async function editContactNote(id: number, notes: string): Promise<any> {
 
 export async function deleteContact(id: number): Promise<any> {
   // Delete a single contact by ID
-  const response = await fetch(`http://localhost:3000/api/v1/contacts/${id}`, {
+  const response = await fetch(`/api/v1/contacts/${id}`, {
     method: "DELETE",
   });
   if (!response.ok) {

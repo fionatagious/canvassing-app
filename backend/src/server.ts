@@ -8,6 +8,9 @@ const app = express();
 // apply global middleware
 applyMiddleware(app);
 
+// use a public directory for static files
+app.use(express.static("public"));
+
 app.use("/api/v1", apiV1Router);
 
 // 404 fallback
