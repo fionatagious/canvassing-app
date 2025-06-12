@@ -18,4 +18,4 @@ I developed this app using Node version `v23.11.0`.
 
 - `npm run seed` to populate database with dummy data
 - `npm run dev` to start server
-- `cypress open` to run tests
+- `npx cypress open` to run tests
