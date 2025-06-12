@@ -22,7 +22,7 @@ gh repo clone fionatagious/canvassing-app
 
 ### Install dependencies
 
-The frontend and backend are completely separate and rely on their own set of dependencies, which I have outlined in the respective README for each directory.
+The frontend and backend are completely separate, each with its own set of dependencies defined in the respective package.json files within their directories.
 
 If you wish to run this app locally, cd into each folder (`/frontend` and `/backend`) and run `npm install`.
 
