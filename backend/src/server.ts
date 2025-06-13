@@ -2,20 +2,23 @@
 import express from "express";
 import apiV1Router from "./api/v1/routes";
 import { applyMiddleware } from "./middleware";
+import path from "path";
 
 const app = express();
 
 // apply global middleware
 applyMiddleware(app);
 
-// use a public directory for static files
-app.use(express.static("public"));
-
+// API routes
 app.use("/api/v1", apiV1Router);
 
-// 404 fallback
-app.use((req, res) => {
-  res.status(404).json({ error: "Route not found." });
+// use a public directory for static (frontend build) files
+app.use(express.static(path.join(__dirname, "public")));
+
+// serve the index.html file for any other routes, e.g. /contacts, /contacts/new, /contacts/:id, etc.
+// React Router will handle the routing on the client side
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // listen for incoming requests
