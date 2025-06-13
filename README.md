@@ -28,11 +28,4 @@ If you wish to run this app locally, cd into each folder (`/frontend` and `/back
 
 ### Create database and schema
 
-In the backend folder, enter `mysql -u root`
-
-At the mysql prompt, create a new database with:
-
-1. `CREATE DATABASE canvassing_db;`
-2. `USE canvassing_db`
-3. Define table schema with `CREATE TABLE contacts`
-4. Seed dummy data with `npm run seed`
+In the backend folder, run `npm run dbsetup` followed by `npm run seed`
