@@ -39,7 +39,7 @@ If you wish to run this app locally, cd into each folder (`/frontend` and `/back
 
 ## Deployment Details
 
-This app is deployed at https://empower.fiona.works using the following infrastructure:
+This app is accessible via https://empower.fiona.works. I deployed it using the following infrastructure:
 
 - Amazon EC2 hosts the full-stack app, including:
 
