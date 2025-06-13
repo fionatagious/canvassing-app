@@ -13,12 +13,12 @@ applyMiddleware(app);
 app.use("/api/v1", apiV1Router);
 
 // use a public directory for static (frontend build) files
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "..", "public")));
 
 // serve the index.html file for any other routes, e.g. /contacts, /contacts/new, /contacts/:id, etc.
 // React Router will handle the routing on the client side
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
 // listen for incoming requests
