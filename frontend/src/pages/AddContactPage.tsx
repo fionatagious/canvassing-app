@@ -1,3 +1,4 @@
+// React hooks
 import {
   useForm,
   SubmitHandler,
@@ -7,7 +8,7 @@ import {
 import { useNavigate } from "react-router-dom";
 // fetch calls
 import { createContact } from "../api/v1/contacts";
-// components
+// ui components
 import TextInput from "../components/TextInput";
 import CheckboxInput from "../components/CheckboxInput";
 import TextArea from "../components/TextArea";
@@ -15,13 +16,14 @@ import Button from "../components/Button";
 import Heading1 from "../components/Heading1";
 import Heading2 from "../components/Heading2";
 import Paragraph from "../components/Paragraph";
+// constants
+import { links } from "../constants/consts";
 // validation
 import {
   createContactSchema,
   CreateContactFormData,
 } from "../schemas/createContactSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { links } from "../data/consts";
 
 const AddContactPage = () => {
   const {

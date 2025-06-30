@@ -3,6 +3,7 @@ import app from "../src/server";
 import request from "supertest";
 import { describe, it, beforeEach, expect } from "vitest";
 import { afterAll } from "vitest";
+
 describe("Contacts API", () => {
   beforeEach(async () => {
     // Reset the contacts table before each test

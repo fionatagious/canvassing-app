@@ -1,21 +1,17 @@
+// React hooks
 import { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
+// fetch calls
 import { getContacts } from "../api/v1/contacts";
+// ui components
 import Button from "../components/Button";
 import FilterLink from "../components/FilterLink";
 import Heading1 from "../components/Heading1";
 import Paragraph from "../components/Paragraph";
-import { links, filters } from "../data/consts";
-
-type Contact = {
-  id: number;
-  name: string;
-  email?: string;
-  address?: string;
-  notes?: string;
-  contacted?: boolean;
-  follow_up_needed?: boolean;
-};
+// constants
+import { links, filters } from "../constants/consts";
+// types
+import { Contact } from "../types/contact";
 
 const ContactsPage = () => {
   // fetch contacts from backend API and store in state

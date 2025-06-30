@@ -20,7 +20,7 @@ type Contact = Omit<ContactRow, "contacted" | "follow_up_needed"> & {
 };
 
 /* Override MySQL TINYINT(1) types with boolean to prepare it for frontend */
-const formatContact = (row: ContactRow): Contact => ({
+const normalizeContact = (row: ContactRow): Contact => ({
   ...row,
   contacted: Boolean(row.contacted),
   follow_up_needed: Boolean(row.follow_up_needed),
@@ -39,8 +39,8 @@ export const getAllContacts = async (
       ContactRow[],
       any
     ];
-    const formatted = contacts.map(formatContact);
-    res.status(200).json(formatted);
+    const normalized = contacts.map(normalizeContact);
+    res.status(200).json(normalized);
   } catch (error) {
     console.error("Error fetching contacts:", error);
   }
@@ -72,8 +72,8 @@ export const getContact = async (
     }
 
     // format the contact row to pass the Contact object rather than array
-    const formatted = formatContact(contact[0]);
-    res.status(200).json(formatted);
+    const normalized = normalizeContact(contact[0]);
+    res.status(200).json(normalized);
   } catch (error) {
     console.error("Error fetching contact:", error);
   }

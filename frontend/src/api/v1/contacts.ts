@@ -1,6 +1,6 @@
 export async function getContacts(): Promise<any> {
   // Fetch contacts from the backend API
-  const response = await fetch("/api/v1/contacts", {
+  const response = await fetch(`/api/v1/contacts`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export async function createContact(
   needToFollowUp: boolean
 ): Promise<any> {
   // Create a new contact
-  const response = await fetch("/api/v1/contacts", {
+  const response = await fetch(`/api/v1/contacts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

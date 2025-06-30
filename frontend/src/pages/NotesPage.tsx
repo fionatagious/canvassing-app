@@ -1,19 +1,14 @@
+// React hooks
 import { useState, useEffect } from "react";
+// fetch calls
 import { getContacts, editContactNote } from "../api/v1/contacts";
+// ui components
 import TextArea from "../components/TextArea";
 import Button from "../components/Button";
 import Heading1 from "../components/Heading1";
 import Paragraph from "../components/Paragraph";
-
-type Contact = {
-  id: number;
-  name: string;
-  email?: string;
-  address?: string;
-  notes?: string;
-  contacted?: boolean;
-  follow_up_needed?: boolean;
-};
+// types
+import { Contact } from "../types/contact";
 
 const NotesPage = () => {
   // fetch contacts from backend API and store in state

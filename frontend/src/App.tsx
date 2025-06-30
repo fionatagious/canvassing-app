@@ -1,6 +1,6 @@
 import Button from "./components/Button";
 import { useNavigate } from "react-router-dom";
-import { links } from "./data/consts";
+import { links } from "./constants/consts";
 import Heading1 from "./components/Heading1";
 import Heading2 from "./components/Heading2";
 import Paragraph from "./components/Paragraph";

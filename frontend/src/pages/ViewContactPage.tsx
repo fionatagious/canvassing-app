@@ -1,20 +1,16 @@
+// React hooks
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+// fetch calls
 import { getContact, deleteContact } from "../api/v1/contacts";
+// ui components
 import Button from "../components/Button";
 import Heading1 from "../components/Heading1";
 import Paragraph from "../components/Paragraph";
-import { links } from "../data/consts";
-
-type Contact = {
-  id: number;
-  name: string;
-  email?: string;
-  address?: string;
-  notes?: string;
-  contacted?: boolean;
-  follow_up_needed?: boolean;
-};
+// constants
+import { links } from "../constants/consts";
+// types
+import { Contact } from "../types/contact";
 
 const ViewContactPage = () => {
   const [contact, setContact] = useState<Contact | null>(null);

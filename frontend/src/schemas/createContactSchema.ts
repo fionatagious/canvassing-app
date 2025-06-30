@@ -15,6 +15,8 @@ export const createContactSchema = yup.object({
       "Please enter a valid email address"
     )
     .nullable()
+    // .transform workaround: convert empty string to null so that Yup does not throw an error if no input is provided
+    .transform((value, originalValue) => (originalValue === "" ? null : value))
     .notRequired(),
   notes: yup.string().nullable().notRequired(),
   contacted: yup.boolean().default(false),
